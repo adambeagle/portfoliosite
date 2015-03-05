@@ -1,0 +1,14 @@
+{% extends 'blog/base_index.html' %}
+
+{% block page_title %}{% block header_title %}Blog{% endblock header_title %}{% endblock page_title %}
+
+{% block header_subtitle %}<h2>Index</h2>{% endblock header_subtitle %}
+
+{% block post_nav %}{% endblock post_nav %}
+
+{% block index-li %}
+    {{ block.super }}
+    class="active"
+{% endblock index-li %}
+
+

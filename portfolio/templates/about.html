@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block header_title %}{% block page_title %}About{% endblock page_title %}{% endblock header_title %}
+
+{% block content %}
+    <div class="row">
+        <h3 class="col-md-12">...Myself</h3>
+        <div class="col-sm-8 col-md-8 col-lg-8">
+            <p>I am currently based in Ann Arbor, MI but will be relocating to San Francisco by August 2015.</p>
+            <p>I have dabbled in areas as diverse as <a>games</a> and <a>web work</a>, taking on the design and implmentation stages of each. No matter the context, my goals in coding remain similar: I am most satisfied with code that is highly reusable, clean, and consistent, and designs that are simple and usable. An element of pragmatism generally permeates all of my work; I'd rather be the guy that didn't prematurely optimize or made the simple UI usable on any platform than the "ninja" or "rockstar."</p>
+            <p>My primary area of expertise and interest is the Python language. Libraries and frameworks I've heavily utilized include Django, Pygame, Numpy, Pytest, and wxPython (less so on the latter in recent years). I also occasinally continue to dabble in .NET, Java, Prolog, and C++ which I picked up in my academic years.  </p>
+            <p>I have equal passion for my life beyond work. My home life is brightened by my wonderful fianc&eacute;e (wife as of May 16th!), our dog, and our two cats. Beyond my day job, my hobbies include cooking (if it's German or made in a skillet, I've likely attempted it), learning and writing about history, and anything DIsneyana.</p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <img class="text-side-img" src="{% static 'images/adamface.jpg' %}">
+        </div>
+    </div>
+    <div>
+        <h3>...this Site</h3>
+        <p>The back-end for this site was built with Django 1.7. The front-end features HTML5, CSS3, and jQuery. Twitter Bootstrap is also utilized. It was designed mobile-first, and is responsive. The source for this site is available at <a>TODO</a>.</p>
+    </div>
+{% endblock content %}

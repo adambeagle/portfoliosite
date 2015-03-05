@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block extra_css %}
+    <link href="{% static 'css/blog.min.css' %}" rel="stylesheet">
+{% endblock extra_css %}
+
+{% block content %}
+        {% block article %}{% endblock article %}
+{% endblock content %}

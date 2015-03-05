@@ -1,0 +1,7 @@
+*.pyc
+*~
+*.orig
+*.old
+staticfiles/*
+portfolio/static/images/*
+portfolio/static/fonts/*

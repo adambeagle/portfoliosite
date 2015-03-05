@@ -1,0 +1,53 @@
+{% extends 'blog/base.html' %}
+{% load humanize %}
+
+{% block content_col_extraclass %}disable-border{% endblock %}
+
+{% block article%}
+    {% if article_list %}
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th class="hidden-xs">Tags</th>
+            </tr>
+            {% for article in article_list %}
+                <tr>
+                    <td>
+                        <a href="{% url 'blog:article' article.slug %}">{{ article.full_title }}</a>
+                    </td>
+                    
+                    <td>
+                        <span class="hidden-xs">
+                            {{ article.posted|naturalday }}
+                        </span>
+                        <span class="visible-xs">
+                            {{ article.posted|date:"SHORT_DATE_FORMAT" }}
+                        </span>
+                    </td>
+                    
+                    <td class="tags hidden-xs">
+                        {% for tag in article.tags.all %}
+                            <span><a href="{% url 'blog:tag' tag.slug %}">{{ tag.slug }}</a></span>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p class="text-center top-spacer">{% block empty_article_set %}No articles yet.{% endblock empty_article_set %}</p>
+    {% endif %}
+    
+    {% if is_paginated %}
+        <ul class="pager">
+            {% if page_obj.has_previous %}
+                <li><a href="/blog?page={{ page_obj.previous_page_number }}">previous</a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <li><a href="/blog?page={{ page_obj.next_page_number }}">next</a></li>
+            {% endif %}
+        </ul>
+        <p class="text-center current-page">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
+    {% endif %}
+    
+{% endblock article %}

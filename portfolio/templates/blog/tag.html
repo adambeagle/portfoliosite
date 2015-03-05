@@ -1,0 +1,14 @@
+{% extends 'blog/base_index.html' %}
+{% load blog_tags %}
+
+{% block page_title %}Tag - {{ tag_string }}{% endblock page_title %}
+
+{% block header_title %}Blog{% endblock header_title %}
+
+{% block header_subtitle %}<h2>tag: {{ tag_string }}</h2>{% endblock header_subtitle %}
+
+{% block post_nav %}
+    {% breadcrumb tag_string 'tag' %}
+{% endblock post_nav %}
+
+{% block empty_article_set %}Tag does not exist{% endblock empty_article_set %}
