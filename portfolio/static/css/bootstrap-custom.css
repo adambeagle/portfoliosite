@@ -187,9 +187,13 @@ th {
 footer {
 	background-color: #EEE;
 	margin-top: 20px;
-	padding-left: 5px;
+	padding: 0 5px;
 	display: block;
 	width: 100%;
+}
+
+.footer-extras {
+	float: right;
 }
 
 /************************************
@@ -246,9 +250,19 @@ hr.project-separator {
 	border: none !important;
 }
 
+.hidden-xxs {
+	display: none;
+}
+
 /************************************
 *  RESPONSIVE
 *************************************/
+@media (min-width: 450px) {
+	.hidden-xxs {
+		display: initial;
+	}
+}
+
 @media (min-width: 768px) {
 	p {
 		font-size: 1.2em;
