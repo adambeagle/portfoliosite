@@ -49,14 +49,6 @@ h2 {
 	font-style: normal;
 }
 
-h2:before {
-	content: "-- ";
-}
-
-h2:after {
-	content: " --";
-}
-
 #content-col > h3 {
 	margin-top: 25px;
 }
@@ -132,9 +124,9 @@ header:not(.with-background-img) {
 /************************************
 *  CODE
 *************************************/
-p code {
+:not(pre) code {
 	background-color: #eee;
-	color: #090;
+	color: inherit;
 }
 
 code pre {
@@ -271,6 +263,15 @@ hr.project-separator {
 	header.with-background-img {
 		height: 25em;
 		padding: 0 2em;
+	}
+	
+	/* Could still look bad with long subtitles that break to a second line... */
+	h2:before {
+		content: "-- ";
+	}
+
+	h2:after {
+		content: " --";
 	}
 	
 	.with-background-img h1 {
