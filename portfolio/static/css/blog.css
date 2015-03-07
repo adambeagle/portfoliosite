@@ -84,3 +84,11 @@ article p > img {
 .footnote li:target {
 	background-color: #fcf8e3;
 }
+
+.footnote-ref:before {
+	content: '[';
+}
+
+.footnote-ref:after {
+	content: ']';
+}
