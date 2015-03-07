@@ -92,3 +92,16 @@ article p > img {
 .footnote-ref:after {
 	content: ']';
 }
+
+/************************************
+*  SHARE BUTTON
+*************************************/
+.share-btn {
+	margin: auto;
+	
+}
+
+.share-btn label {
+	background: #333 !important;
+	color: #eee !important;
+}

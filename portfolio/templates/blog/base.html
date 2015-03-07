@@ -7,4 +7,15 @@
 
 {% block content %}
         {% block article %}{% endblock article %}
+        <div class="share-btn"></div>
 {% endblock content %}
+
+{% block body_end %}
+    {{ block.super }}
+    {% block share_button %}
+        <script src="{% static 'js/share.min.js' %}" type="text/javascript"></script>
+        <script type="text/javascript">
+            var share = new Share('.share-btn');
+        </script>
+    {% endblock share_button %}
+{% endblock body_end %}
