@@ -16,9 +16,15 @@ article>p:first-child {
 	margin-top: 20px;
 }
 
+/* Title column */
 .blog-index tr th:first-of-type,
 .blog-index tr td:first-of-type {
 	text-align: center;
+}
+
+/* Date column */
+.blog-index tr th:nth-of-type(2) {
+	min-width: 90px;
 }
 
 /************************************
@@ -143,6 +149,7 @@ ul.pager {
 
 /* Anything smaller is xxs */
 @media (min-width: 450px) {
+	/* Title column */
 	.blog-index tr th:first-of-type,
 	.blog-index tr td:first-of-type {
 		text-align: left;
@@ -151,6 +158,7 @@ ul.pager {
 
 /* md */
 @media (min-width: 768px) {
+	/* Date column */
 	.blog-index tr td:nth-of-type(2) {
 		min-width: 100px;
 	}
