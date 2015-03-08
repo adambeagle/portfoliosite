@@ -9,6 +9,10 @@ article>p:first-child {
 	margin-top: 1em;
 }
 
+.blog-index {
+	margin-top: 20px;
+}
+
 /************************************
 *  TABLE OF CONTENTS
 *************************************/
@@ -80,6 +84,17 @@ article p > img {
 
 h3 span.heading-number:after {
 	content: ".";
+}
+
+/************************************
+*  PAGINATION
+*************************************/
+.current-page {
+	font-style: italic;
+}
+
+ul.pager {
+	margin-bottom: 10px;
 }
 
 /************************************
