@@ -8,7 +8,7 @@
         <table class="table blog-index">
             <tr>
                 <th>Title</th>
-                <th>Date</th>
+                <th class="hidden-xxs">Date</th>
                 <th class="hidden-xs">Tags</th>
             </tr>
             {% for article in article_list %}
@@ -17,7 +17,7 @@
                         <a href="{% url 'blog:article' article.slug %}">{{ article.full_title }}</a>
                     </td>
                     
-                    <td>
+                    <td class="hidden-xxs">
                         <span class="hidden-xs">
                             {{ article.posted|naturalday }}
                         </span>

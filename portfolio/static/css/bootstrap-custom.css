@@ -253,6 +253,11 @@ hr.project-separator {
 	.hidden-xxs {
 		display: initial;
 	}
+	
+	th.hidden-xxs, 
+	td.hidden-xxs {
+		display: table-cell;
+	}
 }
 
 @media (min-width: 768px) {

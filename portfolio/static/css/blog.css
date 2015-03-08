@@ -9,8 +9,16 @@ article>p:first-child {
 	margin-top: 1em;
 }
 
+/************************************
+*  INDEX
+*************************************/
 .blog-index {
 	margin-top: 20px;
+}
+
+.blog-index tr th:first-of-type,
+.blog-index tr td:first-of-type {
+	text-align: center;
 }
 
 /************************************
@@ -127,4 +135,23 @@ ul.pager {
 .share-btn label {
 	background: #333 !important;
 	color: #eee !important;
+}
+
+/************************************
+*  RESPONSIVE
+*************************************/
+
+/* Anything smaller is xxs */
+@media (min-width: 450px) {
+	.blog-index tr th:first-of-type,
+	.blog-index tr td:first-of-type {
+		text-align: left;
+	}
+}
+
+/* md */
+@media (min-width: 768px) {
+	.blog-index tr td:nth-of-type(2) {
+		min-width: 100px;
+	}
 }
