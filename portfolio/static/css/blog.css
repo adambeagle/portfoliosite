@@ -74,6 +74,14 @@ article p > img {
 	content: ", ";
 }
 
+.heading-number {
+	padding-right: 7px;
+}
+
+h3 span.heading-number:after {
+	content: ".";
+}
+
 /************************************
 *  FOOTNOTES
 *************************************/

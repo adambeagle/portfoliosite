@@ -61,12 +61,10 @@ def make_table_of_contents(soup, min_headings=5, label_headings=True):
         a.string = ''.join(h.strings)
         
         if label_headings:
-            label = '.'.join(map(str, count_stack))
-
-            # To use &nbsp;, need to create this string separately so it can
-            # be output without the formatter
-            new_string = BeautifulSoup('{} &nbsp;{}'.format(label, ''.join(h.strings)))
-            h.string = new_string.prettify(formatter=None)
+            label_span = soup.new_tag('span')
+            label_span['class'] = 'heading-number'
+            label_span.string = '.'.join(map(str, count_stack))
+            h.insert(0, label_span)
         
         new_li.append(a)
         current_ol.append(new_li)
