@@ -64,7 +64,11 @@ def make_table_of_contents(soup, min_headings=5, label_headings=True):
             label_span = soup.new_tag('span')
             label_span['class'] = 'heading-number'
             label_span.string = '.'.join(map(str, count_stack))
+            print(h)
+            h.insert(0, " ")
+            print(h)
             h.insert(0, label_span)
+            print(h, '\n')
         
         new_li.append(a)
         current_ol.append(new_li)
