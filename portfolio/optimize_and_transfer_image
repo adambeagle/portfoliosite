@@ -1,0 +1,10 @@
+# Quick and dirty script to automate optimizing images and transferring them
+# to the droplet in one go.
+# Must be run from the project root directory
+# Intended for use in this project only
+#
+# Usage: optimize_and_transfer_image PATH
+
+python ../util/optimize.py $1
+python ../util/transfer.py portfolio $1
+
