@@ -19,7 +19,7 @@
                         <li>Role: {{ project.role }}</li>
                         <li>Technology: {{ project.technology }}</li>
                         {% if project.source_url %}
-                            <li>Source: <a href="{{ project.source_url.url }}" title="{{ project.source_url.title }}">{{ project.source_url.text }}</a></li>
+                            <li>Source: <a href="{{ project.source_url.url }}" title="{{ project.source_url.title }}" target="_blank">{{ project.source_url.text }}</a></li>
                         {% endif %}
                     </ul>
                     <p>{{ project.description }}</p>
@@ -29,8 +29,10 @@
                         <img src="{% static project.image.static_path %}" alt="{{ project.image.alt }}">
                     </div>
                     {% if project.live_url %}
-                        <span class="live-url-leadin">View live at</span>
-                        <a href="{{ project.live_url.url }}" title="{{ project.live_url.title }}">{{ project.live_url.text }}</a>
+                        <p class="live-url">
+                            <span class="live-url-leadin">View live at</span><br>
+                            <a href="{{ project.live_url.url }}" title="{{ project.live_url.title }}" target="_blank">{{ project.live_url.text }}</a>
+                        </p>
                     {% endif %}
                 </div>
             </div>

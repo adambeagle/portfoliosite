@@ -235,6 +235,12 @@ hr.project-separator {
 	border-radius: 2px;
 }
 
+p.live-url {
+	font-family: paragraph-bold;
+	padding-top: 3px;
+	font-size: 1.3em;
+}
+
 /************************************
 *  UTILITY
 *************************************/
