@@ -1,0 +1,31 @@
+pre.console {
+	margin: auto;
+	margin-bottom: 20px;
+	background-color: #111;
+	border: 6px ridge #ccc;
+	border-radius: 10px;
+	color: #ccc;
+	padding: 10px;
+	height: 20em;
+	width: 80ch;
+	white-space: pre-wrap;
+	word-break: normal;
+	overflow-y: auto;
+}
+
+.console-output {
+	display: inline;
+}
+
+#console-input {
+	background: inherit;
+	color: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: inherit;
+	border: 0;
+}
+
+#console-input:focus{
+	outline: 0;
+}
