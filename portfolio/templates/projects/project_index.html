@@ -22,7 +22,7 @@
                             <li>Source: <a href="{{ project.source_url.url }}" title="{{ project.source_url.title }}" target="_blank">{{ project.source_url.text }}</a></li>
                         {% endif %}
                     </ul>
-                    <p>{{ project.description }}</p>
+                    <p>{{ project.description|safe }}</p>
                 </div>
                 <div class="col-sm-6 {% if not forloop.counter0|divisibleby:'2' %}col-sm-pull-6{% endif %} text-center">
                     <div class="project-img-wrapper">

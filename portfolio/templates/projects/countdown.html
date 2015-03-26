@@ -5,6 +5,14 @@
 
 {% block extra_css %}<link href="{% static 'css/countdown.css' %}" rel="stylesheet">{% endblock extra_css %}
 
+{% block post_nav %}
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="{% url 'projects:index' %}">Projects</a></li>
+        <li class="active">Countdown</li>
+    </ol>
+{% endblock post_nav %}
+
 {% block content %}
     <pre class="console"><div class="console-output"></div><input class="textbox" id="console-input" name="console-input"></pre>
     <p>This is a live demo of a simple console-based Python game called Countdown. The game itself isn't the interesting part - the goal of this project is to allow a standard interactive text-based Python program, i.e. one using <code>print()</code> and <code>input()</code>, to be usable from a browser without modifying the original code.</p>
