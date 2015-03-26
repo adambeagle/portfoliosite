@@ -11,6 +11,7 @@ var timer = function() {
         clearInterval(interval);
         timer_count = DEFAULT_TIME;
         input.prop('disabled', false);
+        input.focus();
         
         output.html('Enter word:\n>>> ');
     }
