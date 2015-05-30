@@ -5,4 +5,5 @@
 staticfiles/*
 portfolio/static/images/*
 portfolio/static/fonts/*
+portfolio/static/docs/*
 portfolio/transfer_static
