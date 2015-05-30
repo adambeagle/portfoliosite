@@ -5,7 +5,7 @@
 
 {% block content %}
     {% for project in projects %}
-        <div class="project">
+        <div class="project" id="{{ project.slug }}">
             <div class="row">
                 <div class="col-md-12">
                     <hr class="project-separator">
