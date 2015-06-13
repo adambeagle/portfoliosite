@@ -88,7 +88,6 @@ header {
 }
 
 header.with-background-img {
-	color: #fcfcfc;
 	background-size: cover;
 	height: 15em;
 }
@@ -98,6 +97,14 @@ header.with-background-img h2 {
 	text-shadow: 3px 2px #333;
 	margin-top: 0;
 	margin-bottom: 15px;
+}
+
+header.with-background-img h1 {
+	color: #fcfcfc;
+}
+
+header.with-background-img h2 {
+	color: #f9f9f9;
 }
 
 header.with-background-img div.header-text {
@@ -301,6 +308,10 @@ p.live-url {
 		font-size: 3em;
 	}
 	
+	.with-background-img h2 {
+		font-size: 2.4em;
+	}
+	
 	.btn-contact {
 		max-width: 70%;
 	}
@@ -314,10 +325,14 @@ p.live-url {
 @media (min-width: 992px) {
 	header.with-background-img {
 		height: 25em;
-		padding: 0 2.5em;
+		padding: 0 5em;
 	}
 	
 	.with-background-img h1 {
 		font-size: 4.5em;
+	}
+	
+	.with-background-img h2 {
+		font-size: 2.9em;
 	}
 }

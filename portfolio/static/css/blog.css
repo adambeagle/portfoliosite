@@ -13,6 +13,11 @@ article>p:first-child {
 	color: #c00;
 }
 
+hr {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
 /************************************
 *  INDEX
 *************************************/
@@ -65,7 +70,7 @@ article p > img {
 
 .captioned-image-wrapper img{
 	display: block;
-	max-width: 100%;
+	max-width: 90%;
 	margin: auto;
 }
 
@@ -73,6 +78,11 @@ article p > img {
 	display: block;
 	text-align: center;
 	font-style: italic;
+}
+
+div.captioned-image-wrapper + div.captioned-image-wrapper {
+	padding-top: 0;
+	margin-top: -5px;
 }
 
 /************************************
@@ -165,5 +175,10 @@ ul.pager {
 	/* Date column */
 	.blog-index tr td:nth-of-type(2) {
 		min-width: 100px;
+	}
+	
+	.captioned-image-wrapper span {
+		font-size: 1.3em;
+		margin-top: 5px;
 	}
 }
