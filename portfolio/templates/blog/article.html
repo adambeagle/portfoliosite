@@ -55,6 +55,30 @@
     <script src="{% static 'js/magnificpopup.min.js' %}" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            /* Add toggle button for lengthy tables of contents */
+            toc = $('.table-of-contents');
+            if (toc.height() > 300) {
+                toc.before('<button type="button" class="btn btn-default showhide-btn">&gt;&gt; Show &gt;&gt;&gt;</button>');
+                showhideBtn = $('.showhide-btn');
+                showhideBtn.click(function() {
+                    toc.slideToggle();
+                    
+                    if(showhideBtn.text() == ">> Show >>>")
+                        showhideBtn.text('<<< Hide <<');
+                    else
+                        showhideBtn.text('>> Show >>>');
+                });
+            }
+            else {
+                toc.show();
+            }
+            
+            /* Add <hr> between major section headings  */
+            majorHeadings = $('nav.table-of-contents+article h3:not(:first-of-type)');
+            majorHeadings.before('<hr>');
+            majorHeadings.css('margin-top', '0');
+            
+            /* Enable magnificPopup */
             $('.popup-gallery').each( function() {
                 $(this).magnificPopup({
                     delegate: 'div a',
@@ -73,25 +97,6 @@
                         }
                     }
                 });
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            majorHeadings = $('nav.table-of-contents+article h3:not(:first-of-type)');
-            majorHeadings.before('<hr>');
-            majorHeadings.css('margin-top', '0');
-
-            $('.table-of-contents').before('<button type="button" class="btn btn-default showhide-btn">&gt;&gt; Show &gt;&gt;&gt;</button>');
-            
-            showhideBtn = $('.showhide-btn');
-            showhideBtn.click(function() {
-                $('.table-of-contents').slideToggle();
-                
-                if(showhideBtn.text() == ">> Show >>>")
-                    showhideBtn.text('<<< Hide <<');
-                else
-                    showhideBtn.text('>> Show >>>');
             });
         });
     </script>
