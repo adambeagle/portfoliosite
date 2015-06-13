@@ -78,8 +78,21 @@
     </script>
     <script>
         $(document).ready(function() {
-            $('nav.table-of-contents+article h3').before('<hr>');
-            $('nav.table-of-contents+article h3').css('margin-top', '0');
+            majorHeadings = $('nav.table-of-contents+article h3:not(:first-of-type)');
+            majorHeadings.before('<hr>');
+            majorHeadings.css('margin-top', '0');
+
+            $('.table-of-contents').before('<button type="button" class="btn btn-default showhide-btn">&gt;&gt; Show &gt;&gt;&gt;</button>');
+            
+            showhideBtn = $('.showhide-btn');
+            showhideBtn.click(function() {
+                $('.table-of-contents').slideToggle();
+                
+                if(showhideBtn.text() == ">> Show >>>")
+                    showhideBtn.text('<<< Hide <<');
+                else
+                    showhideBtn.text('>> Show >>>');
+            });
         });
     </script>
 {% endblock body_end %}

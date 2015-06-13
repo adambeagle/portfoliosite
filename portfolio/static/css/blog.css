@@ -39,6 +39,11 @@ hr {
 /************************************
 *  TABLE OF CONTENTS
 *************************************/
+
+.table-of-contents {
+	display: none;
+}
+
 .table-of-contents ol {
 	counter-reset: item;
 }
@@ -54,6 +59,11 @@ hr {
 
 .table-of-contents a {
 	padding-left: 5px;
+}
+
+.showhide-btn {
+	margin-bottom: 5px;
+	font-family: "Courier New", monospace, serif;
 }
 
 /************************************
