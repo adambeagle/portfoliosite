@@ -26,25 +26,23 @@
 
 <body>
         <nav role="navigation" class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
-                      <span class="navbar-brand">Adam Beagle</span>
-                </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <span class="navbar-brand">Adam Beagle</span>
+            </div>
 
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{% url 'blog:index' %}">Blog</a></li>
-                        <li><a href="{% url 'about' %}">About</a></li>
-                        <li ><a href="{% url 'projects:index' %}">Projects</a></li>
-                        <li><a href="{% url 'contact' %}">Contact</a></li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'blog:index' %}">Blog</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li ><a href="{% url 'projects:index' %}">Projects</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
             </div>
         </nav>
         

@@ -308,6 +308,10 @@ p.live-url {
 		content: " --";
 	}
 	
+	.navbar-nav.navbar-right:last-child {
+		margin-right: 0;
+	}
+	
 	.with-background-img h1 {
 		font-size: 3em;
 	}
