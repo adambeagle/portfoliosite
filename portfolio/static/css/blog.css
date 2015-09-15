@@ -18,6 +18,10 @@ hr {
 	margin-bottom: 30px;
 }
 
+.fill-w {
+	width: 100%;
+}
+
 /************************************
 *  INDEX
 *************************************/
@@ -93,6 +97,14 @@ article p > img {
 div.captioned-image-wrapper + div.captioned-image-wrapper {
 	padding-top: 0;
 	margin-top: -5px;
+}
+
+/************************************
+*  MEDIA
+*************************************/
+video {
+	display: block;
+	margin: auto;
 }
 
 /************************************
