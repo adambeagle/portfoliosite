@@ -21,167 +21,163 @@
 	src: url('../fonts/SourceSansPro-Bold.ttf');
 }
 
-/************************************
-*  GENERAL
-*************************************/
+/*******************
+* GENERAL
+*******************/
 body {
-	font-family: paragraph;
+  padding-top: 50px; /* Clear navbar */
+  min-height: 100%;
+  font-family: paragraph, sans-serif;
 }
 
-img {
-	max-width: 100%;
+.major-row {
+  min-height: 30em;
+  padding: 10px;
+  padding-top: 50px;
 }
 
-/************************************
-*  HEADINGS
-*************************************/
-h1, h2, h3, h5, h6 {
-	font-family: headings;
+/*******************
+* TYPOGRAPHY
+*******************/
+h1, h2, h3, h4, h5 {
+  font-family: headings, serif;
 }
 
 h1 {
-	margin-bottom: 10px;
+  color: #eee;
+  font-size: 3em;
+  font-family: headings-bold;
+  text-shadow: 4px 4px #222;
+  margin-top: 1em;
+  letter-spacing: 5px;
 }
 
 h2 {
-	color: #444;
-	font-family: paragraph;
-	font-style: normal;
+  font-size: 1.9em;
+  color: #f5f5f5;
+  text-shadow: 3px 3px #333;
 }
 
-#content-col > h3 {
-	margin-top: 25px;
-}
-
-.row > h3:first-of-type {
-	margin-top: 10px;
+h3 {
+  font-size: 3em;
+  letter-spacing: 2px;
 }
 
 h4 {
-	font-family: headings-bold;
+  font-size: 1.4em;
+  font-family: headings-bold;
+  margin-top: 10px;
 }
 
-/************************************
-*  TYPOGRAPHY
-*************************************/
-p strong,
-p b,
-th {
-	font-family: paragraph-bold;
+p {
+  font-size: 1.2em;
 }
 
-blockquote p {
-	font-size: inherit;
+a:hover {
+  text-decoration: none;
 }
 
-/************************************
-*  NAV
-*************************************/
-.navbar-nav li > a {
-	font-family: paragraph-bold;
-	font-size: 110%;
-	text-transform: uppercase;
+.live-url {
+  font-size: 1.4em;
+  font-family: paragraph-bold;
 }
 
-/************************************
-*  HEADER
-*************************************/
-header {
-	text-align: center;
-	padding: 0 1em;
+/*******************
+NAV
+*******************/
+.navbar-nav {
+  font-family: paragraph-bold;
+  text-transform: uppercase;
+  font-size: 1.2em;
 }
 
-header.with-background-img {
-	background-size: cover;
-	height: 15em;
+.navbar-brand,
+.top-link {
+  visibility: hidden;
 }
 
-header.with-background-img h1, 
-header.with-background-img h2 {
-	text-shadow: 3px 2px #333;
-	margin-top: 0;
-	margin-bottom: 15px;
+.navbar-brand:hover {
+	color: #bbb !important;
 }
 
-header.with-background-img h1 {
-	color: #fcfcfc;
+/*******************
+HEADER
+*******************/
+#top {
+  min-height: 50em;
+  background-color: #012;
+  background-image: url("/static/images/banners/greys_us.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /*background-position: 80% top;*/
+  background-position: 35% 50%;
 }
 
-header.with-background-img h2 {
-	color: #f9f9f9;
+header hr {
+  border-top-color: #eee;
+  border-top-width: 7px;
+  box-shadow: 3px 3px #444;
+  border-radius: 5px;
+  opacity: 0.8;
 }
 
-header.with-background-img div.header-text {
-	position: relative;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+/*******************
+PORTFOLIO
+*******************/
+div.project:nth-child(odd) ul {
+  direction: rtl;
 }
 
-header:not(.with-background-img) {
-	margin-bottom: 20px;
+div.project:nth-child(odd) {
+  text-align: right;
 }
 
-/************************************
-*  IMAGES
-*************************************/
-.text-side-img {
-		display: block;
-		margin: auto;
-		max-width: 50%;
-	}
-
-/************************************
-*  CODE
-*************************************/
-:not(pre) code {
-	background-color: #eee;
-	color: inherit;
+div.project ul {
+  list-style-type: circle;
 }
 
-code pre {
-	border: none;
-	padding: 0;
+.project ul {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-/************************************
-*  TABLES
-*************************************/
-th {
-	text-transform: uppercase;
+div.project img {
+  border-radius: 10px;
 }
 
-/************************************
-*  BUTTONS
-*************************************/
-.btn-contact {
-	display: block;
-	max-width: 90%;
-	padding: 30px;
-	font-size: 1.5em;
-	margin: auto;
-	margin-top: 1em;
+hr.project-separator {
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  width: 15%;
+  border: 3px solid #acacac;
+  border-radius: 2px;
 }
 
-.btn-grey {
-	background-color: #eee;
-	color: #666;
+.project-img-wrapper img {
+  max-height: 400px;
 }
 
-.btn-grey:hover {
-	background-color: #ddd;
+.project-img-wrapper {
+  display: inline-block;
+  background-color: #f8f8f8;
+  border: 2px solid #555;
+  padding: 7px;
+  max-width: 75%;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-.btn-contact .glyphicon {
-	display: block;
-	font-size: 2em;
+/*******************
+OTHER MAJOR SECTIONS
+*******************/
+#about {
+  background-color: #cef;
 }
 
-.btn-contact img {
-	display: block;
-	margin: auto;
-	height: 2em;
+#portfolio {
+  background-color: #eee;
 }
 
 /************************************
@@ -190,7 +186,7 @@ th {
 footer {
 	background-color: #EEE;
 	margin-top: 20px;
-	padding: 0 5px;
+	padding: 3px 5px;
 	display: block;
 	width: 100%;
 }
@@ -199,148 +195,86 @@ footer {
 	float: right;
 }
 
-/************************************
-*  PROJECTS
-*************************************/
-.project h3 {
-	margin-top: 0;
+/*******************
+BUTTONS
+*******************/
+.btn-social {
+  margin: auto;
+  margin-top: 10px;
+  display: block;
+  background-color: #bbb;
+  color: #222;
+  font-size: 1.6em;
+  font-family: paragraph-bold;
+  border: 2px solid #222;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
 }
 
-.project ul {
-	padding-left: 20px;
-	padding-right: 20px;
+.btn-social:hover {
+  background-color: #111;
+  color: #dadada;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 
-div.project img {
-	border-radius: 10px;
+.btn-contact {
+  padding: 30px;
+  font-size: 1.5em;
+  margin-top: 20px;
 }
 
-div.project:nth-child(even) {
-	text-align: right;
+.btn-contact i.fa {
+  font-size: 1.5em;
+  display: block;
 }
 
-div.project ul {
-	list-style-type: circle;
+/*******************
+RESPONSIVE
+*******************/
+@media (min-width:768px) {
+  header {
+    padding-top: 30px;
+  }
+  
+  h1 {
+    font-size: 4em;
+  }
+  
+  h2 {
+    font-size: 2.4em;
+  }
+  
+  h2:before {
+    content: '~ ';
+  }
+  
+  h2:after {
+    content: ' ~';
+  }
+  
+  .project-img-wrapper {
+    max-width: 100%;
+  }
+  
+  .btn-social {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .btn-contact {
+    width: 50%;
+  }
+  
+  #top a:last-of-type button.btn-social {
+    margin-right: 0;
+  }
 }
 
-div.project:nth-child(even) ul{
-	direction: rtl;
-}
-
-.project-img-wrapper {
-	display: block;
-	background-color: #f8f8f8;
-	border: 2px solid #555;
-	padding: 7px;
-	max-width: 75%;
-	border-radius: 10px;
-	margin: auto;
-}
-
-hr.project-separator {
-	display: inline-block;
-	margin-bottom: 10px;
-	margin-top: 50px;
-	width: 15%;
-	border: 3px solid #acacac;
-	border-radius: 2px;
-}
-
-p.live-url {
-	font-family: paragraph-bold;
-	padding-top: 3px;
-	font-size: 1.3em;
-}
-
-/************************************
-*  UTILITY
-*************************************/
-.disable-border {
-	border: none !important;
-}
-
-.hidden-xxs {
-	display: none;
-}
-
-/************************************
-*  RESPONSIVE
-*************************************/
-@media (min-width: 450px) {
-	.hidden-xxs {
-		display: initial;
-	}
-	
-	th.hidden-xxs, 
-	td.hidden-xxs {
-		display: table-cell;
-	}
-}
-
-@media (min-width: 768px) {
-	h3 {
-		font-size: 30px;
-	}
-	
-	h4 {
-		font-size: 25px;
-	}
-	
-	h5 {
-		font-size: 24px;
-	}
-	
-	p {
-		font-size: 1.2em;
-	}
-	
-	header.with-background-img {
-		height: 25em;
-		padding: 0 2em;
-	}
-	
-	/* Could still look bad with long subtitles that break to a second line... */
-	h2:before {
-		content: "-- ";
-	}
-
-	h2:after {
-		content: " --";
-	}
-	
-	.navbar-nav.navbar-right:last-child {
-		margin-right: 0;
-	}
-	
-	.with-background-img h1 {
-		font-size: 3em;
-	}
-	
-	.with-background-img h2 {
-		font-size: 2.4em;
-	}
-	
-	.btn-contact {
-		max-width: 70%;
-	}
-	
-	.text-side-img,
-	.project-img-wrapper {
-		max-width: 100%;
-	}
-}
-
-@media (min-width: 992px) {
-	header.with-background-img {
-		height: 25em;
-		padding: 0 5em;
-	}
-	
-	.with-background-img h1 {
-		font-size: 4.5em;
-	}
-	
-	.with-background-img h2 {
-		font-size: 2.9em;
-	}
+@media (max-width:768px) {
+  .center-xs {
+    margin: auto;
+  }
 }
