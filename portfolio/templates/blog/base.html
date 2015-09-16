@@ -5,10 +5,29 @@
     <link href="{% static 'css/blog.min.css' %}" rel="stylesheet">
 {% endblock extra_css %}
 
-{% block content %}
-        {% block article %}{% endblock article %}
-        <div class="share-btn"></div>
-{% endblock content %}
+{% block navbar-fixed %}{% endblock navbar-fixed %}
+
+{% block body %}       
+    <header {% if banner_path %}class="with-background-img" style="background-image: url({{ banner_path }});"{% endif %}>
+        {% block header %}
+            <div class="header-text">
+                <h1>{% block header_title%}{% endblock header_title %}</h1>
+                {% block header_subtitle %}{% endblock header_subtitle %}
+            </div>
+        {% endblock header %}
+    </header>
+    
+    {% block post_header %}{% endblock post_header %}
+    
+    <div class="container">
+        <div class="row">
+            <div id="content-col" class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 {% block content_col_extraclass %}{% endblock %}">
+                {% block article %}{% endblock article %}
+                <div class="share-btn"></div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
 
 {% block body_end %}
     {{ block.super }}
