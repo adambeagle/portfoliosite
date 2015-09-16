@@ -1,11 +1,3 @@
 {% extends 'blog/article.html' %}
-{% load blog_tags %}
-
-{% block post_nav %}{% endblock post_nav %}
 
 {% block content_col_extraclass %}{{ block.super }} disable-border{% endblock content_col_extraclass %}
-
-{% block post_header %}
-    {% breadcrumb article.title %}
-    {{ block.super }}
-{% endblock post_header %}

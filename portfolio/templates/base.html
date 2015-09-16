@@ -49,7 +49,27 @@
       </div>
     </nav>
     
-    {% block body %}{% endblock body %}
+    {% block post_nav %}{% endblock post_nav %}
+    
+    {% block full_content %}
+        <header {% if banner_path %}class="with-background-img" style="background-image: url({{ banner_path }});"{% endif %}>
+            {% block header %}
+                <div class="header-text">
+                    <h1 class="text-center">{% block header_title%}{% endblock header_title %}</h1>
+                    {% block header_subtitle %}{% endblock header_subtitle %}
+                </div>
+            {% endblock header %}
+        </header>
+        
+        <div class="container">
+            <div class="row">
+                <div id="content-col" class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 {% block content_col_extraclass %}{% endblock %}">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+    {% endblock full_content %}
     
     <footer>
         <span>&copy; 2015 Adam Beagle</span>
