@@ -116,7 +116,7 @@
         }
     
         // Any scroll will do since only a downward scroll can register at first load.
-        $(window).scroll(function() {
+        $(window).one('scroll', function() {
             scrollGuide.hide();
         });
 
