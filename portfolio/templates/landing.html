@@ -27,6 +27,7 @@
             </a>
           </div>
         </div>
+        <span class="scroll-guide"></span>
       </div>
       <div id="about" class="row major-row">
         <div class="col-sm-6 col-md-5 col-md-offset-2 col-sm-offset-1">
@@ -97,18 +98,42 @@
 
 {% block body_end %}
 <script>
-    /*
-    Only show navbar-brand text and top link when header is not onscreen to avoid redundancy
-    */
-    $(window).on('scroll', function() {
-      var toggleY = $('header').offset()['top'] + $('header').height();
-      
-      if (window.pageYOffset > toggleY) {
-        $('.navbar-brand, .top-link').css('visibility', 'visible');
-      }
-      else {
-        $('.navbar-brand, .top-link').css('visibility', 'hidden');
-      }
+    $(document).ready(function() {
+        var bannerBottom = $('#banner').height() + $('nav').height();
+        var windowH = $(window).height();
+        var scrollGuide = $('.scroll-guide');
+        
+        /* 
+        Scroll guide shows by defailt (for noscript).
+        It is hidden if area below the banner is visibile, or once the user scrolls down.
+        If it should be shown, it is moved to just above the bottom edge of the screen.
+        */
+        if (windowH < (bannerBottom + 100)) {
+            scrollGuide.css('bottom', (bannerBottom - windowH + 70) + 'px');
+        }
+        else {
+            scrollGuide.hide();
+        }
+    
+        // Any scroll will do since only a downward scroll can register at first load.
+        $(window).scroll(function() {
+            scrollGuide.hide();
+        });
+
+        /*
+        Only show navbar-brand text and top link when header is not onscreen to avoid redundancy
+        */
+        $(window).on('scroll', function() {
+          var toggleY = $('header').offset()['top'] + $('header').height();
+          
+          if (window.pageYOffset > toggleY) {
+            $('.navbar-brand, .top-link').css('visibility', 'visible');
+          }
+          else {
+            $('.navbar-brand, .top-link').css('visibility', 'hidden');
+          }
+        });
     });
+
 </script>
 {% endblock body_end %}
