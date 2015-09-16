@@ -1,11 +1,10 @@
 from django.templatetags.static import static
-from django.views.generic import TemplateView
+from django.views.generic import ListView
 
-class HomeView(TemplateView):
-    template_name = 'index.html'
+from projects.models import Project
+
+class LandingView(ListView):
+    model = Project
+    context_object_name = 'projects'
+    template_name = 'landing.html'
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['banner_path'] = static('images/banners/tahq_banner.png')
-        
-        return context

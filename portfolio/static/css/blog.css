@@ -1,6 +1,10 @@
 /************************************
 *  GENERAL
 *************************************/
+body {
+	padding-top: 0;
+}
+
 #content-col {
 	border-top: 3px double #ccc;
 }
@@ -20,6 +24,46 @@ hr {
 
 .fill-w {
 	width: 100%;
+}
+
+/************************************
+*  HEADER
+*************************************/
+header {
+	text-align: center;
+	padding: 0 1em;
+}
+
+header.with-background-img {
+	background-size: cover;
+	height: 15em;
+}
+
+header.with-background-img h1, 
+header.with-background-img h2 {
+	text-shadow: 3px 2px #333;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+header.with-background-img h1 {
+	color: #fcfcfc;
+}
+
+header.with-background-img h2 {
+	color: #f9f9f9;
+}
+
+header.with-background-img div.header-text {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+header:not(.with-background-img) {
+	margin-bottom: 20px;
 }
 
 /************************************
@@ -136,6 +180,66 @@ h3 span.heading-number:after {
 	content: ".";
 }
 
+.navbar-brand {
+	visibility: visible;
+}
+
+/************************************
+*  HEADINGS
+*************************************/
+h1 {
+	font-family: headings;
+	font-size: 36px;
+	margin-bottom: 10px;
+	color: black;
+	text-shadow: none;
+	letter-spacing: 0;
+}
+
+h2 {
+	color: #333;
+	text-shadow: none;
+	font-size: 22px;
+}
+
+#content-col > h3 {
+	margin-top: 25px;
+}
+
+.row > h3:first-of-type {
+	margin-top: 10px;
+}
+
+h3 {
+	margin-top: 40px;
+	letter-spacing: 1px;
+}
+
+h4 {
+	margin-top: 30px;
+}
+
+/************************************
+*  CODE
+*************************************/
+:not(pre) code {
+	background-color: #eee;
+	color: inherit;
+}
+
+code pre {
+	border: none;
+	padding: 0;
+}
+
+/************************************
+*  TABLES
+*************************************/
+th {
+	text-transform: uppercase;
+	font-family: paragraph-bold;
+}
+
 /************************************
 *  PAGINATION
 *************************************/
@@ -190,6 +294,18 @@ ul.pager {
 	.blog-index tr td:first-of-type {
 		text-align: left;
 	}
+	
+	h3 {
+		font-size: 30px;
+	}
+	
+	h4 {
+		font-size: 25px;
+	}
+	
+	h5 {
+		font-size: 24px;
+	}
 }
 
 /* md */
@@ -202,5 +318,33 @@ ul.pager {
 	.captioned-image-wrapper span {
 		font-size: 1.3em;
 		margin-top: 5px;
+	}
+	
+	h2 {
+		font-size: 26px;
+	}
+	
+	/* Could still look bad with long subtitles that break to a second line... */
+	h2:before {
+		content: "-- ";
+	}
+
+	h2:after {
+		content: " --";
+	}
+}
+
+@media (min-width: 992px) {
+	header.with-background-img {
+		height: 25em;
+		padding: 0 5em;
+	}
+	
+	.with-background-img h1 {
+		font-size: 4.5em;
+	}
+
+	.with-background-img h2 {
+		font-size: 2.9em;
 	}
 }

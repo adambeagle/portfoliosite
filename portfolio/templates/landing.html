@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block full_page_title %}adambeagle.com{% endblock full_page_title %}
+
+{% block body %}
+  <div id="top" class="container-fluid">
+      <div id="banner" class="row major-row">
+        <div class="col-xs-10 col-xs-offset-1 text-center">
+          <header>
+            <h1>Adam Beagle</h1>
+            <h2>Web Design and Development</h2>
+            <hr>
+          </header>
+          <div>
+            <a href="/blog" target="_blank">
+              <button class="btn btn-social"><i class="fa fa-commenting"></i> Blog</button>
+            </a>
+            <a href="https://github.com/adambeagle" target="_blank">
+              <button class="btn btn-social"><i class="fa fa-github"></i> Github</button>
+            </a>
+            <a href="http://stackoverflow.com/users/3015488/narpar1217" target="_blank">
+              <button class="btn btn-social"><i class="fa fa-stack-overflow"></i> StackOverflow</button>
+            </a>
+            <a href="http://freecodecamp.com/adambeagle" target="_blank">
+              <button class="btn btn-social"><i class="fa fa-fire"></i> freeCodeCamp</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="about" class="row major-row">
+        <div class="col-sm-6 col-md-5 col-md-offset-2 col-sm-offset-1">
+          <h3>About</h3>
+          <p>I am a web developer and designer based in the San Francisco Bay area, originally from Michigan.</p>
+          <p>My primary area of expertise and interest is the Python language. Libraries and frameworks I've heavily utilized include Django, Pygame, Numpy, and Pytest. On the frontend I often utilize jQuery and Bootstrap.</p>
+          <p>I have dabbled in areas as diverse as games and web work, taking on the design and implmentation stages of each. No matter the context, my goals in coding remain similar: I am most satisfied with code that is highly reusable, clean, and consistent, and designs that are simple and usable.</p>
+          <p>I have equal passion for my life beyond work. My home life is brightened by my wonderful wife, our dog, and our two cats. Beyond my day job, my hobbies include cooking (if it's German or made in a skillet, I've likely attempted it), learning and writing about history, and anything DIsneyana.</p>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <img class="img-responsive center-xs" src="http://adambeagle.com/static/images/adamface.jpg">
+        </div>
+      </div>
+      
+      
+      <div id="portfolio" class="row major-row">
+        <div class="col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
+          <h3 class="text-center">Portfolio</h3>
+          
+          {% for project in projects %}
+            <div class="project">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <hr class="project-separator">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-md-5 col-md-offset-1{% if not forloop.counter0|divisibleby:'2' %} col-sm-push-6 col-md-push-5{% endif %}">
+                    <h4>{{ project.title }}</h4>
+                    <ul>
+                      <li>Type: {{ project.type }}</li>
+                      <li>Role: {{ project.role }}</li>
+                      <li>Technology: {{ project.technology }}</li>
+                      {% if project.source_url %}
+                        <li>Source: <a href="{{ project.source_url.url }}" title="{{ project.source_url.title }}" target="_blank">{{ project.source_url.text }}</a></li>
+                      {% endif %}
+                    </ul>
+                    <p>{{ project.description|safe }}</p>
+                  </div>
+                  <div class="col-sm-6 col-md-5 text-center{% if not forloop.counter0|divisibleby:'2' %} col-sm-pull-6 col-md-pull-5{% endif %}">
+                    <div class="project-img-wrapper center-xs">
+                      <img class="img-responsive" src="{% static project.image.static_path %}" alt="{{ project.image.alt }}">
+                    </div>
+                    {% if project.live_url %}
+                    <p class="live-url">View live at
+                      <br>
+                      <a href="{{ project.live_url.url }}" title="{{ project.live_url.title }}" target="_blank">{{ project.live_url.text }}</a>
+                    </p>
+                    {% endif %}
+                  </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div id="contact" class="row major-row">
+        <div class="col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1 text-center">
+          <h3>Contact</h3>
+          <p>I am interested in both freelance work and full or part time positions! Email the address below to contact me.</p>
+          <a href="mailto:adam@adambeagle.com">
+            <button class="btn btn-primary btn-contact"><i class="fa fa-envelope-o"></i> adam@adambeagle.com</button>
+          </a>
+        </div>
+      </div>
+    </div>
+{% endblock body %}
+
+{% block body_end %}
+<script>
+    /*
+    Only show navbar-brand text and top link when header is not onscreen to avoid redundancy
+    */
+    $(window).on('scroll', function() {
+      var toggleY = $('header').offset()['top'] + $('header').height();
+      
+      if (window.pageYOffset > toggleY) {
+        $('.navbar-brand, .top-link').css('visibility', 'visible');
+      }
+      else {
+        $('.navbar-brand, .top-link').css('visibility', 'hidden');
+      }
+    });
+</script>
+{% endblock body_end %}

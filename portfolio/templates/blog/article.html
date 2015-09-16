@@ -15,10 +15,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.min.css' %}">
 {% endblock extra_css %}
 
-{% block post_nav %}
-    {% breadcrumb article.full_title %}
-{% endblock post_nav %}
-
 {% block post_header %}
     <div class=" article-info tags visible-xs visible-sm">Posted {{ article.posted|naturalday }}<br>
     Filed under 
@@ -27,10 +23,6 @@
         {% endfor %}
     </div>
 {% endblock post_header %}
-
-{% block breadcrumb %}
-    <li class="active">{{ article.title }}</li>
-{% endblock breadcrumb %}
 
 {% block article %}
     <div class=" article-info tags hidden-xs hidden-sm">Posted {{ article.posted|naturalday }}<br>
