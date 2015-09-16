@@ -54,6 +54,7 @@ h1 {
 }
 
 h2 {
+  margin-top: 10px;
   font-size: 1.9em;
   color: #f5f5f5;
   text-shadow: 3px 3px #333;
