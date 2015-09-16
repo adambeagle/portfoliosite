@@ -188,18 +188,7 @@ h3 span.heading-number:after {
 *  HEADINGS
 *************************************/
 h1 {
-	font-family: headings;
-	font-size: 36px;
 	margin-bottom: 10px;
-	color: black;
-	text-shadow: none;
-	letter-spacing: 0;
-}
-
-h2 {
-	color: #333;
-	text-shadow: none;
-	font-size: 22px;
 }
 
 #content-col > h3 {
@@ -286,7 +275,6 @@ ul.pager {
 /************************************
 *  RESPONSIVE
 *************************************/
-
 /* Anything smaller is xxs */
 @media (min-width: 450px) {
 	/* Title column */

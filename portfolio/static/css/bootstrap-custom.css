@@ -45,6 +45,12 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
+	font-size: 36px;
+	color: black;
+	margin-bottom: 20px;
+}
+
+#banner h1 {
   color: #eee;
   font-size: 3em;
   font-family: headings-bold;
@@ -54,6 +60,11 @@ h1 {
 }
 
 h2 {
+	color: #333;
+	font-size: 22px;
+}
+
+#banner h2 {
   margin-top: 10px;
   font-size: 1.9em;
   color: #f5f5f5;
@@ -89,6 +100,10 @@ a:hover {
 .live-url {
   font-size: 1.4em;
   font-family: paragraph-bold;
+}
+
+.header-text {
+	text-align: center;
 }
 
 /************************************
@@ -301,12 +316,12 @@ BUTTONS
     padding-top: 30px;
   }
   
-  h1 {
+  #banner h1 {
     font-size: 4em;
 	margin-top: 1em;
   }
   
-  h2 {
+  #banner h2 {
     font-size: 2.4em;
   }
   

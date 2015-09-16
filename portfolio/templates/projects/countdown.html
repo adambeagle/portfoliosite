@@ -1,23 +1,16 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block page_title %}{% block header_title %}Countdown{% endblock header_title %}{% endblock page_title%}
+{% block page_title %}{% block header_title %}Countdown Demo{% endblock header_title %}{% endblock page_title%}
 
 {% block extra_css %}<link href="{% static 'css/countdown.css' %}" rel="stylesheet">{% endblock extra_css %}
 
-{% block body %}
-    <h3 class="text-center">Countdown Demo</h3>
-    <div class="container">
-        <div class="row">
-            <div id="content-col" class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                <pre class="console"><div class="console-output"></div><input class="textbox" id="console-input" name="console-input"></pre>
-                <p>This is a live demo of a simple console-based Python game called Countdown. The game itself isn't the interesting part - the goal of this project is to allow a standard interactive text-based Python program, i.e. one using <code>print()</code> and <code>input()</code>, to be usable from a browser without modifying the original code.</p>
-                <p>For the vast majority of the game, this simulated terminal is getting its content from a remote Python process. It communicates with a server (a Python <code>http.HTTPServer</code> object) which in turn communicates with the original Python game (launched in a different thread per browser session) via some IO-wrapping magic. At this point, the timer portion is implemented using JavaScript. I hope to discuss the entire process in detail in a blog article soon.</p>
-                <p>To play again after quitting, refresh this page.</p>
-            </div>
-        </div>
-    </div>
-{% endblock body %}
+{% block content %}
+    <pre class="console"><div class="console-output"></div><input class="textbox" id="console-input" name="console-input"></pre>
+    <p>This is a live demo of a simple console-based Python game called Countdown. The game itself isn't the interesting part - the goal of this project is to allow a standard interactive text-based Python program, i.e. one using <code>print()</code> and <code>input()</code>, to be usable from a browser without modifying the original code.</p>
+    <p>For the vast majority of the game, this simulated terminal is getting its content from a remote Python process. It communicates with a server (a Python <code>http.HTTPServer</code> object) which in turn communicates with the original Python game (launched in a different thread per browser session) via some IO-wrapping magic. At this point, the timer portion is implemented using JavaScript. I hope to discuss the entire process in detail in a blog article soon.</p>
+    <p>To play again after quitting, refresh this page.</p>
+{% endblock content %}
 
 {% block body_end %}
     <script src="{% static 'js/pyconsole.min.js' %}"></script>
