@@ -106,6 +106,16 @@ a:hover {
 	text-align: center;
 }
 
+:not(pre) code {
+	background-color: #eee;
+	color: inherit;
+}
+
+code pre {
+	border: none;
+	padding: 0;
+}
+
 /************************************
 NAV
 *************************************/

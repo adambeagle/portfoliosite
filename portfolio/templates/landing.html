@@ -103,6 +103,9 @@
         var windowH = $(window).height();
         var scrollGuide = $('.scroll-guide');
         
+        // Remove href to avoid redundant/confusing 'home' link (but retain with noscript for other pages)
+        $('.navbar-brand a').removeAttr('href');
+        
         /* 
         Scroll guide shows by defailt (for noscript).
         It is hidden if area below the banner is visibile, or once the user scrolls down.
