@@ -26,6 +26,10 @@ hr {
 	width: 100%;
 }
 
+nav .top-link {
+	visibility: hidden;
+}
+
 /************************************
 *  HEADER
 *************************************/
@@ -178,10 +182,6 @@ video {
 
 h3 span.heading-number:after {
 	content: ".";
-}
-
-.navbar-brand {
-	visibility: visible;
 }
 
 /************************************

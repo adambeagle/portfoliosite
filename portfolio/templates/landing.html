@@ -105,6 +105,7 @@
         
         // Remove href to avoid redundant/confusing 'home' link (but retain with noscript for other pages)
         $('.navbar-brand a').removeAttr('href');
+        $('.navbar-brand, .top-link').css('visibility', 'hidden');
         
         /* 
         Scroll guide shows by defailt (for noscript).

@@ -125,11 +125,6 @@ NAV
   font-size: 1.2em;
 }
 
-.navbar-brand,
-.top-link {
-  visibility: hidden;
-}
-
 .navbar-brand a {
 	color: #bbb;
 }
