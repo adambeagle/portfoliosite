@@ -9,6 +9,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', LandingView.as_view(), name='landing'),
+    url(r'^about/$', RedirectView.as_view(url='/#about')),
+    url(r'^portfolio/$', RedirectView.as_view(url='/#portfolio')),
+    url(r'^contact/$', RedirectView.as_view(url='/#contact')),
     url(r'^resume|cv/$', RedirectView.as_view(url=static('docs/resume_Adam_Beagle.pdf'))),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include('blog.urls', namespace='blog')),
