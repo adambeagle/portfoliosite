@@ -27,6 +27,7 @@ hr {
 }
 
 nav .top-link {
+	display: none;
 	visibility: hidden;
 }
 

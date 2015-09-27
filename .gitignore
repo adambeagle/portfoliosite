@@ -6,4 +6,5 @@ staticfiles/*
 portfolio/static/images/*
 portfolio/static/fonts/*
 portfolio/static/docs/*
+portfolio/static/audio/*
 portfolio/transfer_static

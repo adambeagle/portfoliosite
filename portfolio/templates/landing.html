@@ -105,7 +105,7 @@
         
         // Remove href to avoid redundant/confusing 'home' link (but retain with noscript for other pages)
         $('.navbar-brand a').removeAttr('href');
-        $('.navbar-brand, .top-link').css('visibility', 'hidden');
+        $('.navbar-brand, .top-link').css('display', 'none');
         
         /* 
         Scroll guide shows by defailt (for noscript).
@@ -131,10 +131,10 @@
           var toggleY = $('header').offset()['top'] + $('header').height();
           
           if (window.pageYOffset > toggleY) {
-            $('.navbar-brand, .top-link').css('visibility', 'visible');
+            $('.navbar-brand, .top-link').fadeIn();
           }
           else {
-            $('.navbar-brand, .top-link').css('visibility', 'hidden');
+            $('.navbar-brand, .top-link').fadeOut();
           }
         });
     });
