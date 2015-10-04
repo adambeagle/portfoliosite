@@ -49,7 +49,7 @@
           <h3 class="text-center">Portfolio</h3>
           
           {% for project in projects %}
-            <div class="project">
+            <div id="{{ project.slug }}" class="project">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <hr class="project-separator">
