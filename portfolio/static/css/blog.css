@@ -185,6 +185,11 @@ h3 span.heading-number:after {
 	content: ".";
 }
 
+pre {
+	word-break: keep-all;
+	white-space: pre-wrap;
+}
+
 /************************************
 *  HEADINGS
 *************************************/
@@ -207,6 +212,10 @@ h3 {
 
 h4 {
 	margin-top: 30px;
+}
+
+h6 {
+	font-size: 18px;
 }
 
 /************************************
@@ -281,6 +290,10 @@ ul.pager {
 	
 	h5 {
 		font-size: 24px;
+	}
+	
+	h6 {
+		font-size: 22px;
 	}
 }
 
