@@ -171,6 +171,9 @@ video {
 /************************************
 *  TYPOGRAPHY
 *************************************/
+h3 {
+	font-size: 2.3em;
+}
 
 /* Insert comma between tags in tag lists */
 .tags span:not(:last-child):after {
