@@ -1,0 +1,74 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'css/swscroll.css' %}">
+  <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="overlay-message">
+        <a href="{% url 'projects:swscroll-info' %}">Return to site</a>
+    </div>
+    <img id="logoimg" src="{% static 'images/projects/swscroll-demo/swlogo.png' %}">
+    <div id="scroll-wrapper">
+      <div id="scroll">
+        <h2 class="episode-number">Episode <span class="episode-number">IV</span></h2>
+        <h3 id="episode-title">A New Hope</h3>
+        
+        <p>
+          <span>It is a period of civil war.</span> 
+          <span>Rebel spaceships, striking</span> 
+          <span>from a hidden base, have won</span>  
+          <span>their first victory against</span>
+          <span>the evil Galactic Empire.</span>
+        </p> 
+        
+        <p>
+          <span>During the battle, Rebel</span>
+          <span>spies managed to steal secret</span>
+          <span>plans to the Empire's</span>
+          <span>ultimate weapon, the DEATH</span>
+          <span>STAR, an armored space</span>
+          <span>station with enough power to</span>
+          <span>destroy an entire planet.</span>
+        </p>
+        
+        <p>
+          <span>Pursued by the Empire's</span>
+          <span>sinister agents, Princess</span>
+          <span>Leia races home aboard her</span>
+          <span>starship, custodian of the</span>
+          <span>stolen plans that can save</span>
+          <span>her people and restore</span>
+          <span>freedom to the galaxy....</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <iframe class="youtube-embed" width="300" height="300" src="https://www.youtube.com/embed/4rQSJDLM8ZE?autoplay=1&start=3&end=86"></iframe>
+  <script>
+    $(document).ready(function() {
+      function aspectRatioFix() {
+        var c = $('#container');
+        var b = $('body');
+        
+        if (window.innerHeight < 0.425*window.innerWidth) {
+          b.css('height', 'auto');
+          c.css('transform', 'none');
+          c.css('top', '0');
+        }
+        else {
+          b.css('height', '100%');
+          c.css('transform', 'translateY(-50%)');
+          c.css('top', '50%');
+        }
+      }
+      
+      aspectRatioFix();
+      $(window).resize(aspectRatioFix);
+    });
+  </script>
+</body>
+</html>

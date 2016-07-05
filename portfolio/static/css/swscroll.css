@@ -1,0 +1,249 @@
+/************************************
+*  RESET	
+*************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/************************************
+*  CUSTOM FONT FACES
+*************************************/
+
+/* To use a text logo, insert desired font path below */
+/*@font-face{
+	font-family: swlogo;
+	src: url('INSERT_FONT_HERE.ttf');
+}*/
+
+@font-face{
+	font-family: sweptitle;
+	src: url('../fonts/sweptitle.ttf');
+}
+
+@font-face{
+	font-family: swmaintext;
+	src: url('../fonts/swtext.ttf');
+}
+
+/************************************
+*  GENERAL
+*************************************/
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  background-color: white;
+  text-align: center;
+  color: transparent;
+  text-shadow: 0 0 0.2vw rgba(251, 186, 57, 1.0);
+}
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 42.5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  background-image: url('../images/projects/swscroll-demo/bg.png');
+  background-size: 100% 100%;
+  perspective: 47vw;
+}
+
+.youtube-embed {
+  visibility: hidden;
+}
+
+div.overlay-message {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ddd;
+	z-index: 9000;
+	padding: 14px;
+	opacity: 0.4;
+	transition: opacity 0.2s;	
+    border-bottom-right-radius: 10px;
+}
+
+div.overlay-message:hover {
+	opacity: 1.0;
+}
+
+/************************************
+*  TYPOGRAPHY
+*************************************/
+
+/* Use this class if logo is text */
+#logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateZ(50px);
+  font-family: swlogo;
+  font-size: 300px;
+  font-weight: bold;
+  animation-duration: 14s;
+  animation-timing-function: cubic-bezier(0.15, 0.7, 0.25, 1);
+  animation-name: swzoomout;  
+  animation-fill-mode: forwards;
+  width: 100%;
+  margin: auto;
+  line-height: 225px;
+}
+
+/* Use this class if logo is image */
+#logoimg {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) translateZ(50px);
+  animation-delay: 2.5s;
+  animation-duration: 14s;
+  animation-timing-function: cubic-bezier(0.15, 0.7, 0.25, 1);
+  animation-fill-mode: forwards;
+  animation-name: swzoomout;  
+  opacity: 0;
+}
+
+h2.episode-number {
+  font-size: 8vw;
+  margin-bottom: 8vw;
+}
+
+#episode-title {
+  font-family: sweptitle;
+  font-size: 17vw;
+}
+
+#scroll {
+  font-family: swmaintext;
+  transform: translateY(100%);
+  animation-delay: 10.5s;
+  animation-duration: 74s;
+  animation-timing-function: linear;
+  animation-name: swscrollup;
+  animation-fill-mode: forwards;
+}
+
+#scroll p {
+  text-align: justify;
+  font-size: 6.1vw;
+  line-height: 7vw;
+  letter-spacing: .4vw;
+  width: 95%;
+  margin: auto;
+  margin-top: 7.8vw;
+}
+
+#scroll p:first-of-type {
+  margin-top: 10vw;
+}
+
+/* Justify credit http://blog.vjeux.com/2011/css/css-one-line-justify.html */
+#scroll p span {
+  display: block;
+  width: 100%;
+  text-align: justify;
+  margin-top: -5.7vw;
+}
+
+#scroll p span:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+#scroll p:first-of-type span:first-of-type {
+  margin-top: 0;
+}
+
+#scroll p span:last-of-type {
+  text-align: left;
+}
+
+/************************************
+*  TRANSFORMS AND ANIMATION
+*************************************/
+#scroll-wrapper {
+  transform: rotateX(62deg) translateZ(57vw);
+}
+
+@keyframes swzoomout {
+    from {
+        opacity: 1.0;
+        transform: translateX(-50%) translateY(-50%) scale(1.4);
+    }
+    
+    85% {
+        opacity: 1.0;
+    }
+    
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%) scale(0.01);
+    }
+}
+
+@keyframes swscrollup {
+  from {
+    transform: translateY(40%);
+    opacity: 1.0;
+  }
+  
+  93% {
+    opacity: 1.0;
+  }
+  
+  to {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+}

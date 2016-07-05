@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block page_title %}{% block header_title %}Star Wars Crawl Demo{% endblock header_title %}{% endblock page_title%}
+
+{% block content %}
+    <div class="text-center">
+        <div class="project-img-wrapper">
+            <img class="img-responsive" src="{% static 'images/projects/swscroll_comparison.png' %}" alt="Demo and film comparison image">
+        </div>
+    </div>
+    <p>The goal of this project was to create a Star Wars opening crawl using only HTML/CSS that is as accurate to the films as possible.</p>
+    <p>There are differences in style not only between each film's crawls, but between individual releases of the films. This demo used the 2011 Blu-ray release of Episode IV as a guide.</p>
+    <p>CSS3 keyframe animations were used to create both the zoom-out "Star Wars" logo and the crawling text itself. A CSS3 transform rotates the text plane to give the crawl the depth effect from the films. The demo is fully responsive, i.e. it stretches the full width of the browser and the text is the correct size regardless of viewport size. Dynamic text size is accomplished with viewport units. The size of the demo is constrained to the aspect ratio of the film.</p>
+    <p><i>A note about music</i><br>The audio of a live performance of the theme found on Youtube is used in place of the true score to avoid legal issues arising from hosting music.</p>
+    <div class="text-center">
+        <a class="btn btn-default" href="{% url 'projects:swscroll' %}" target="_blank" role="button"><strong>Click to view demo (opens in new tab)</strong></a>
+    </div>
+{% endblock content %}
